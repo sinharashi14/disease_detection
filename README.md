@@ -1,99 +1,76 @@
-# disease_detection
-disease detection using ANN model 
-🧠 Diabetes Prediction using Artificial Neural Network (ANN)
-📋 Project Overview
+# 🧠 Diabetes Prediction using Artificial Neural Network (ANN)
 
-This project implements a Computational Intelligence model using an Artificial Neural Network (ANN) to predict whether a patient is likely to have diabetes based on various medical diagnostic features such as glucose level, BMI, blood pressure, and age.
-The model is built using TensorFlow (Keras) and Scikit-learn, trained on a subset of the Pima Indians Diabetes Dataset from the UCI Machine Learning Repository.
+## 📋 Project Overview
+This project implements a **Computational Intelligence model** using an **Artificial Neural Network (ANN)** to predict whether a patient is likely to have diabetes based on various medical diagnostic features such as glucose level, BMI, blood pressure, and age.  
+The model is built using **TensorFlow (Keras)** and **Scikit-learn**, trained on the **Pima Indians Diabetes Dataset** from the UCI Machine Learning Repository.
 
-🎯 Objective
+---
+
+## 🎯 Objective
 To identify the likelihood of diabetes in patients by analyzing medical parameters using an ANN model that learns patterns from data.
-🧩 Dataset
-Source: UCI Machine Learning Repository – Pima Indians Diabetes Dataset
 
-Attributes:
+---
 
-Pregnancies
+## 🧩 Dataset
+- **Source:** [UCI Machine Learning Repository – Pima Indians Diabetes Dataset](https://archive.ics.uci.edu/ml/datasets/pima+indians+diabetes)
+- **Attributes:**
+  - Pregnancies  
+  - Glucose  
+  - BloodPressure  
+  - SkinThickness  
+  - Insulin  
+  - BMI  
+  - DiabetesPedigreeFunction  
+  - Age  
+  - Outcome (0 = No Diabetes, 1 = Diabetes)
 
-Glucose
+---
 
-BloodPressure
+## ⚙️ Tech Stack
+- **Language:** Python 🐍  
+- **Libraries Used:**
+  - TensorFlow / Keras  
+  - Scikit-learn  
+  - Pandas  
+  - NumPy  
+  - Matplotlib  
+  - Seaborn  
 
-SkinThickness
+---
 
-Insulin
+## 🚀 Implementation Steps
+1. **Load Dataset** – Imported using Pandas DataFrame.  
+2. **Preprocessing** – Splitting and scaling data with `StandardScaler`.  
+3. **Model Building** – Multi-Layer Perceptron:
+   - Input layer: 8 neurons  
+   - Hidden layers: 12 and 8 neurons (ReLU)  
+   - Output layer: 1 neuron (Sigmoid)  
+4. **Training** – 5 epochs, batch size = 10, optimizer = `adam`.  
+5. **Evaluation** – Accuracy, confusion matrix, and classification report.  
+6. **Visualization** – Accuracy and loss plotted using Matplotlib.  
+7. **Model Saving** – Model saved as `diabetes_ann_model.h5`.
 
-BMI
+---
 
-DiabetesPedigreeFunction
+## 📊 Results
+- **Accuracy:** ~80–85% (varies slightly per run)  
+- **Outputs:**
+  - Confusion Matrix  
+  - Classification Report  
+  - Accuracy and Loss Graphs  
 
-Age
+---
 
-Outcome (0 = No Diabetes, 1 = Diabetes)
+## 🧠 Key Learnings
+- Designing and training **Artificial Neural Networks**.  
+- Data scaling for faster convergence.  
+- Role of activation and loss functions in classification.  
+- Using **TensorFlow Keras Sequential Models** effectively.
 
-⚙️ Tech Stack
+---
 
-Language: Python 🐍
-
-Libraries:
-
-TensorFlow / Keras
-
-Scikit-learn
-
-Pandas
-
-NumPy
-
-Matplotlib
-
-Seaborn
-
-🚀 Implementation Steps
-
-Load Dataset – Data loaded directly into a Pandas DataFrame.
-
-Preprocessing – Split into training and test sets, scaled using StandardScaler.
-
-Model Building – Multi-Layer Perceptron with:
-
-Input layer: 8 neurons
-
-Hidden layers: 12 and 8 neurons (ReLU activation)
-
-Output layer: 1 neuron (Sigmoid activation)
-
-Training – Model trained for 5 epochs with batch size of 10 using adam optimizer.
-
-Evaluation – Accuracy, confusion matrix, and classification report generated.
-
-Visualization – Accuracy and loss curves plotted using Matplotlib.
-
-Model Saving – Saved trained model as diabetes_ann_model.h5.
-
-📊 Results
-
-Accuracy: ~80–85% (varies slightly per run)
-
-Model Output:
-
-Confusion Matrix
-
-Classification Report
-
-Accuracy and Loss graphs
-
-🧠 Key Learnings
-
-Understanding of Artificial Neural Network architecture.
-
-Importance of data scaling for convergence.
-
-Use of activation functions, loss functions, and optimizers.
-
-Practical experience with TensorFlow Keras sequential models.
-
-🧾 How to Run
+## 🧾 How to Run
+```bash
 # Clone the repository
 git clone https://github.com/<your-username>/diabetes-ann-prediction.git
 cd diabetes-ann-prediction
@@ -101,19 +78,14 @@ cd diabetes-ann-prediction
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the notebook or Python script
+# Run the model
 python diabetes_ann.py
 
 📦 Output Files
-
-diabetes_ann_model.h5 → Saved trained ANN model
-
+diabetes_ann_model.h5 → Trained ANN model
 Accuracy and loss graphs displayed during execution
 
 💡 Future Enhancements
-
-Add more hidden layers or neurons for higher accuracy
-
-Implement dropout regularization to prevent overfitting
-
-Deploy the model using a simple web interface (Flask/Streamlit)
+Add dropout regularization to avoid overfitting
+Increase hidden layers for improved accuracy
+Deploy model via Flask or Streamlit for real-time predictions
